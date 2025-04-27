@@ -1,4 +1,4 @@
-# Pretty Pink Store
+# The Little Pink Store
 
 This is a beginner-friendly e-commerce website built with React, TypeScript, and Vite.  
 The app allows users to browse products, add them to a shopping cart, and remove items from the cart.  
