@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #ffc0cb;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  .navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e605e6; /* pink/purple */
+  }
+  
+  .navbar-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #770177;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: #ffffff;
+  }
+  

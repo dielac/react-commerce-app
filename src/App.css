@@ -1,0 +1,32 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li, a, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*  soft pink background  */
+body {
+  background-color: #fff0f5; /* Light lavender pink */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #605f5f;
+  min-height: 100vh;
+}
+
+/* Make links and buttons have no underline and pointer cursor */
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Make the whole app centered*/
+.app-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Smooth hover transitions */
+button, a {
+  transition: all 0.3s ease;
+}
