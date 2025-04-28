@@ -39,3 +39,7 @@ The project was designed to be soft, fun, and styled with light colors for a fri
 
 ```bash
 git clone https://github.com/dielac/react-commerce-app
+
+
+# React Ecommerce App
+(Deployed with Vercel + GitHub Actions!)
