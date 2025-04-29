@@ -43,3 +43,7 @@ git clone https://github.com/dielac/react-commerce-app
 
 # React Ecommerce App
 (Deployed with Vercel + GitHub Actions!)
+
+
+Updated to trigger CI/CD.
+
