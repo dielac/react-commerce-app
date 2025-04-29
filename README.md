@@ -45,6 +45,9 @@ git clone https://github.com/dielac/react-commerce-app
 (Deployed with Vercel + GitHub Actions!)
 
 
+Successfully added CI/CD deployment pipeline!
+
+
 Updated to trigger CI/CD.
 
 ### Deployment working with CI/CD pipeline
