@@ -47,3 +47,6 @@ git clone https://github.com/dielac/react-commerce-app
 
 Updated to trigger CI/CD.
 
+### Deployment working with CI/CD pipeline
+
+
