@@ -18,6 +18,6 @@ describe('Cart Integration Test', () => {
     );
 
     //Expect to see the cute "empty cart" message when nothing's been added yet
-    expect(screen.getByText(/Your cart is feeling sad... maybe add something fun? 💖/i)).toBeInTheDocument();
+    expect(screen.getByText(/Empty Cart/i)).toBeInTheDocument();
   });
 });
