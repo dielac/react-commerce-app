@@ -1,27 +1,30 @@
+/* this is the top bar that shows the store name and the links */
 .navbar {
-    background-color: #ffc0cb;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-  }
-  
-  .navbar-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #e605e6; /* pink/purple */
-  }
-  
-  .navbar-links a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #770177;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-links a:hover {
-    color: #ffffff;
-  }
-  
+  background-color: #ffc0cb; /* soft pink, ofc */
+  padding: 15px 30px; /* comfy space inside */
+  display: flex; /* so title and links go side-by-side */
+  justify-content: space-between; 
+  align-items: center;
+  font-family: 'Comic Sans MS', cursive; 
+}
+
+/* the store name/title on the left */
+.navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e605e6; 
+}
+
+/*  the links on the right */
+.navbar-links a {
+  margin-left: 20px; 
+  text-decoration: none; 
+  color: #770177; 
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* when you hover over a link it turns white*/
+.navbar-links a:hover {
+  color: #ffffff;
+}

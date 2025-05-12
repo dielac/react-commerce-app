@@ -1,0 +1,45 @@
+# This GitHub Actions workflow runs on every push to the "main" branch.
+# It first builds and tests the app, then deploys it to Vercel if everything passes.
+
+name: CI/CD for React E-Commerce App
+
+on:
+  push:
+    branches:
+      - main  # Trigger this workflow only when code is pushed to the main branch
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # Gets your latest code from GitHub
+        with:
+          fetch-depth: 0  
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20  # Use Node.js version 20 for this app
+
+      - name:  Install dependencies
+        run: npm install  # Runs "npm install" to install packages
+
+      - name:  Run tests
+        run: npm run test  # Runs your test script to make sure nothing is broken
+
+  deploy:
+    needs: build-and-test  # Only run this if the build-and-test job succeeds
+    runs-on: ubuntu-latest
+
+    if: success()  # Proceed with deploy only if everything before passed
+
+    steps:
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25  # Uses a GitHub Action made for Vercel deployments
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}        # Your Vercel access token
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}      # Your Vercel org ID
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}  # Your project ID on Vercel
+          vercel-args: '--prod'  # Deploy to the live (production) version of your site
