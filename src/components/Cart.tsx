@@ -13,7 +13,7 @@ const Cart = () => {
 
       {/* if the cart is empty, shows a message */}
       {cartItems.length === 0 ? (
-        <p>Your cart is feeling sad... maybe add something fun? 💖</p>
+        <p>Your cart is feeling sad ... maybe add something fun? 💖</p>
       ) : (
         <ul>
           {/* go through all the stuff in the cart and show them here */}
