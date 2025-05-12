@@ -8,24 +8,24 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # Gets your latest code from GitHub
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20  # Use Node.js version 20 for this app
+          node-version: 20
 
-      - name:  Install dependencies
-        run: npm install  # Runs "npm install" to install packages
+      - name: Install dependencies
+        run: npm install
 
-      - name:  Run tests
-        run: npm run test  # Runs your test script to make sure nothing is broken
+      - name: Run tests
+        run: npm run test
 
   deploy:
     needs: build-and-test  # Only run this if the build-and-test job succeeds
