@@ -31,13 +31,23 @@ jobs:
     needs: build-and-test  # Only run this if the build-and-test job succeeds
     runs-on: ubuntu-latest
 
-    if: success()  # Proceed with deploy only if everything before passed
+    needs: build-and-test  # Proceed with deploy only if everything before passed
 
     steps:
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25  # Uses a GitHub Action made for Vercel deployments
+      
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}        # Your Vercel access token
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}      # Your Vercel org ID
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}  # Your project ID on Vercel
-          vercel-args: '--prod'  # Deploy to the live (production) version of your site
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+      - name: Deploy to Vercel
+        run: |
+          npm install -g vercel
+          vercel --prod --yes --token ${{secrets.VERCEL_TOKEN}}
